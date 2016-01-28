@@ -1,0 +1,42 @@
+<div class="container">
+
+  <h3 ng-bind="ctrl.welcome"></h3>
+
+  <div ng-repeat="item in ctrl.items">
+  <div class="clearfix">
+    <div class="pull-left">{{ item.key }}</div>
+    <div class="pull-right">{{ item.value }}</div>
+  </div>
+  </div>
+
+
+  <form class="form-inline" role="form" novalidate>
+  <div class="row">
+    <div class="form-group">
+      <label class="sr-only" for="item-name">Your item</label>
+      <input
+        class="form-control"
+        id="item-name"
+        ng-model="ctrl.name"
+        name="item-name"
+        placeholder="Your item" />
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="item-price">Price</label>
+      <input
+        class="form-control"
+        id="item-price"
+        ng-model="ctrl.price"
+        name="item-price"
+        placeholder="Price" />
+    </div>
+  </div>
+  <div class="row">
+    <button
+      class="btn btn-primary pull-right"
+      type="submit"
+      novalidate ng-click="ctrl.processForm()">Save</button>
+  </div>
+</form>
+
+</div>
